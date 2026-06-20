@@ -1,0 +1,75 @@
+/* ============================
+   Notice Board Widget
+   ============================ */
+.notice-widget {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.notice-widget__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.notice-widget__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.notice-widget__date {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+}
+
+.notice-widget__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow-y: auto;
+  max-height: 380px;
+  flex: 1;
+  padding-right: 4px;
+}
+
+.notice-widget__item {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border-light, #F0F0F5);
+}
+
+.notice-widget__item:first-child {
+  padding-top: 0;
+}
+
+.notice-widget__item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.notice-widget__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.notice-widget__author {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.notice-widget__time {
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+  font-weight: 400;
+}
+
+.notice-widget__message {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}

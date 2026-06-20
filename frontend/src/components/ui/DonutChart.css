@@ -1,0 +1,74 @@
+/* ============================
+   Donut Chart Component
+   ============================ */
+.donut-chart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.donut-chart__svg {
+  transform: rotate(-90deg);
+}
+
+.donut-chart__ring-bg {
+  fill: none;
+  stroke: var(--border, #E5E7EB);
+  transition: stroke var(--transition-normal, 250ms ease);
+}
+
+.donut-chart__ring {
+  fill: none;
+  stroke-linecap: round;
+  stroke-dasharray: var(--circumference);
+  stroke-dashoffset: var(--circumference);
+  animation: drawCircle 1.5s ease forwards;
+  transition: stroke var(--transition-normal, 250ms ease);
+}
+
+.donut-chart__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+}
+
+.donut-chart__value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary, #1A1A2E);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.donut-chart__percent {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary, #6B7280);
+}
+
+.donut-chart__label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-tertiary, #9CA3AF);
+  margin-top: 2px;
+  letter-spacing: 0.01em;
+}
+
+/* Animation keyframe is defined in index.css globally,
+   but we redeclare here for portability */
+@keyframes drawCircle {
+  from {
+    stroke-dashoffset: var(--circumference);
+  }
+  to {
+    stroke-dashoffset: var(--offset);
+  }
+}

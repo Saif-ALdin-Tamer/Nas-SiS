@@ -1,0 +1,121 @@
+/* ============================
+   Dashboard Grid Layout
+   ============================ */
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ---- Grid Areas ---- */
+
+/* Row 1: Timetable spans full width */
+.dashboard__timetable {
+  grid-column: 1 / -1;
+}
+
+/* Row 2: Three equal columns */
+.dashboard__attendance {
+  grid-column: 1 / 2;
+}
+
+.dashboard__assignment {
+  grid-column: 2 / 3;
+}
+
+.dashboard__noticeboard {
+  grid-column: 3 / 4;
+  grid-row: 2 / 4;  /* spans two rows */
+}
+
+/* Row 3: Test report + Pending assignments */
+.dashboard__test-report {
+  grid-column: 1 / 2;
+}
+
+.dashboard__pending {
+  grid-column: 2 / 3;
+}
+
+/* ---- Staggered entrance animation ---- */
+.dashboard > * {
+  opacity: 0;
+  animation: dashFadeIn 0.5s ease forwards;
+}
+
+.dashboard > *:nth-child(1) { animation-delay: 0.05s; }
+.dashboard > *:nth-child(2) { animation-delay: 0.1s; }
+.dashboard > *:nth-child(3) { animation-delay: 0.15s; }
+.dashboard > *:nth-child(4) { animation-delay: 0.2s; }
+.dashboard > *:nth-child(5) { animation-delay: 0.25s; }
+.dashboard > *:nth-child(6) { animation-delay: 0.3s; }
+
+@keyframes dashFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================
+   Responsive Breakpoints
+   ============================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .dashboard {
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem;
+  }
+
+  .dashboard__timetable {
+    grid-column: 1 / -1;
+  }
+
+  .dashboard__attendance {
+    grid-column: 1 / 2;
+  }
+
+  .dashboard__assignment {
+    grid-column: 2 / 3;
+  }
+
+  .dashboard__noticeboard {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  .dashboard__test-report {
+    grid-column: 1 / 2;
+  }
+
+  .dashboard__pending {
+    grid-column: 2 / 3;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    padding: 0.75rem;
+    gap: 1rem;
+  }
+
+  .dashboard__timetable,
+  .dashboard__attendance,
+  .dashboard__assignment,
+  .dashboard__noticeboard,
+  .dashboard__test-report,
+  .dashboard__pending {
+    grid-column: 1 / -1;
+  }
+}

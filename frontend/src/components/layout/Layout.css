@@ -1,0 +1,22 @@
+/* ============================
+   Layout Styles
+   ============================ */
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-main, #f5f6fa);
+}
+
+.layout__main {
+  margin-left: 240px;
+  flex: 1;
+  padding: 24px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout__content {
+  flex: 1;
+}

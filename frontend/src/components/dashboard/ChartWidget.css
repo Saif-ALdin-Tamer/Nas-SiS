@@ -1,0 +1,60 @@
+/* ============================
+   Chart Widget (Attendance / Assignment / Test Report)
+   ============================ */
+.chart-widget__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.chart-widget__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.chart-widget__subtitle {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+}
+
+.chart-widget__body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0 1.25rem;
+}
+
+/* Legend */
+.chart-widget__legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.chart-widget__legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+}
+
+.chart-widget__legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.chart-widget__legend-label {
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+.chart-widget__legend-value {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.8rem;
+}

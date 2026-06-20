@@ -1,0 +1,346 @@
+.settings-page {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.settings-header {
+  margin-bottom: 2rem;
+}
+
+.settings-header h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.settings-header p {
+  color: var(--text-secondary);
+}
+
+.settings-content {
+  display: flex;
+  min-height: 500px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.settings-sidebar {
+  width: 240px;
+  background-color: var(--bg-main);
+  border-right: 1px solid var(--border);
+  padding: 2rem 0;
+}
+
+.settings-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-nav-btn {
+  width: 100%;
+  text-align: left;
+  padding: 0.875rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-left: 3px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.settings-nav-btn:hover {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.settings-nav-btn.active {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  border-left-color: var(--primary);
+  font-weight: 600;
+}
+
+.settings-panel {
+  flex: 1;
+  padding: 2.5rem;
+}
+
+.settings-section h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.settings-desc {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+.profile-avatar-section {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.avatar-preview {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-full);
+  background-color: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.avatar-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 500px;
+}
+
+.settings-form .form-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.settings-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.settings-form label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.settings-form input {
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  background-color: var(--bg-main);
+  transition: border-color var(--transition-fast);
+  color: var(--text-primary);
+}
+
+.settings-form input:focus {
+  border-color: var(--primary);
+  background-color: var(--bg-card);
+}
+
+.settings-form input.read-only {
+  background-color: var(--bg-main);
+  color: var(--text-secondary);
+  cursor: not-allowed;
+}
+
+.settings-actions {
+  margin-top: 1rem;
+}
+
+.danger-zone {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  border: 1px solid var(--accent-red);
+  border-radius: var(--radius-md);
+  background-color: var(--accent-red-light);
+}
+
+.danger-zone h4 {
+  color: var(--accent-red);
+  margin-bottom: 0.5rem;
+}
+
+.danger-zone p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.danger-btn {
+  border-color: var(--accent-red);
+  color: var(--accent-red);
+}
+
+.danger-btn:hover {
+  background-color: var(--accent-red);
+  color: white;
+}
+
+/* Toggle Switch */
+.notification-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.notification-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.notification-info h4 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.notification-info p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--text-tertiary);
+  transition: .3s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .3s;
+}
+
+input:checked + .slider {
+  background-color: var(--primary);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.slider.round {
+  border-radius: 24px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Appearance Themes */
+.theme-options {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.theme-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.theme-preview {
+  height: 120px;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border);
+  transition: border-color var(--transition-fast);
+}
+
+.light-theme {
+  background: linear-gradient(135deg, #f5f6fa 0%, #ffffff 100%);
+}
+
+.dark-theme {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a2a3e 100%);
+}
+
+.system-theme {
+  background: linear-gradient(135deg, #f5f6fa 50%, #1a1a2e 50%);
+}
+
+.theme-card span {
+  text-align: center;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.theme-card.active .theme-preview {
+  border-color: var(--primary);
+}
+
+.theme-card.active span {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .settings-content {
+    flex-direction: column;
+  }
+  
+  .settings-sidebar {
+    width: 100%;
+    padding: 1rem 0;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .settings-nav {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  
+  .settings-nav-btn {
+    text-align: center;
+    padding: 0.75rem 1rem;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+  }
+  
+  .settings-nav-btn.active {
+    border-left: none;
+    border-bottom-color: var(--primary);
+  }
+  
+  .settings-form .form-row {
+    flex-direction: column;
+  }
+  
+  .theme-options {
+    flex-direction: column;
+  }
+}
