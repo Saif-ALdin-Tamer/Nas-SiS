@@ -1,10 +1,10 @@
-const morgan = require('morgan');
-const winston = require('winston');
+const morgan = require("morgan");
+const winston = require("winston");
 
-const env = process.env.NODE_ENV || 'development';
+const env = process.env.NODE_ENV || "development";
 
 const logger = winston.createLogger({
-  level: env === 'development' ? 'debug' : 'info',
+  level: env === "development" ? "debug" : "info",
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
@@ -21,7 +21,7 @@ const logger = winston.createLogger({
   ],
 });
 
-const requestLogger = morgan('combined');
+const requestLogger = morgan("combined");
 
 module.exports = {
   logger,

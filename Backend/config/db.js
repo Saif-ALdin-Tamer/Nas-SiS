@@ -1,9 +1,9 @@
-const mongoose = require('mongoose');
-const logger = require('../utils/logger');
+const mongoose = require("mongoose");
+const logger = require("../utils/logger");
 
 const connectDB = async (mongoUri) => {
   if (!mongoUri) {
-    throw new Error('MONGO_URI is required to connect to MongoDB.');
+    throw new Error("MONGO_URI is required to connect to MongoDB.");
   }
 
   try {
@@ -12,9 +12,9 @@ const connectDB = async (mongoUri) => {
       useUnifiedTopology: true,
     });
 
-    logger.info('MongoDB connected successfully.');
+    logger.info("MongoDB connected successfully.");
   } catch (error) {
-    logger.error('MongoDB connection error:', error);
+    logger.error("MongoDB connection error:", error);
     process.exit(1);
   }
 };

@@ -1,16 +1,20 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const feeSchema = new mongoose.Schema(
   {
-    studentId: { type: mongoose.Schema.Types.ObjectId, ref: 'StudentProfile', required: true },
+    studentId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "StudentProfile",
+      required: true,
+    },
     invoiceNumber: { type: String, required: true, unique: true, trim: true },
     amountDue: { type: Number, required: true },
     amountPaid: { type: Number, default: 0 },
     dueDate: { type: Date, required: true },
     status: {
       type: String,
-      enum: ['paid', 'unpaid', 'partial', 'overdue'],
-      default: 'unpaid',
+      enum: ["paid", "unpaid", "partial", "overdue"],
+      default: "unpaid",
     },
     payments: [
       {
@@ -24,4 +28,4 @@ const feeSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-module.exports = mongoose.model('Fee', feeSchema);
+module.exports = mongoose.model("Fee", feeSchema);

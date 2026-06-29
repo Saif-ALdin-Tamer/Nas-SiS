@@ -1,11 +1,15 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const studentProfileSchema = new mongoose.Schema(
   {
-    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
     studentId: { type: String, required: true, unique: true, trim: true },
     dateOfBirth: { type: Date, required: true },
-    gender: { type: String, enum: ['male', 'female', 'other'], required: true },
+    gender: { type: String, enum: ["male", "female", "other"], required: true },
     address: {
       street: String,
       city: String,
@@ -13,9 +17,9 @@ const studentProfileSchema = new mongoose.Schema(
       zip: String,
       country: String,
     },
-    parentId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    parentId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     enrollmentDate: { type: Date, default: Date.now },
-    currentClass: { type: mongoose.Schema.Types.ObjectId, ref: 'Class' },
+    currentClass: { type: mongoose.Schema.Types.ObjectId, ref: "Class" },
     gradeLevel: String,
     emergencyContact: {
       name: String,
@@ -26,4 +30,4 @@ const studentProfileSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-module.exports = mongoose.model('StudentProfile', studentProfileSchema);
+module.exports = mongoose.model("StudentProfile", studentProfileSchema);

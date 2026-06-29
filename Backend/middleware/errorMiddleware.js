@@ -1,8 +1,8 @@
-const ApiError = require('../utils/apiError');
+const ApiError = require("../utils/apiError");
 
 const errorHandler = (err, req, res, next) => {
   if (!(err instanceof ApiError)) {
-    err = new ApiError(500, err.message || 'Internal server error.');
+    err = new ApiError(500, err.message || "Internal server error.");
   }
 
   const response = {
@@ -10,11 +10,11 @@ const errorHandler = (err, req, res, next) => {
     message: err.message,
   };
 
-  if (process.env.NODE_ENV !== 'production' && err.details) {
+  if (process.env.NODE_ENV !== "production" && err.details) {
     response.details = err.details;
   }
 
-  if (process.env.NODE_ENV === 'development') {
+  if (process.env.NODE_ENV === "development") {
     response.stack = err.stack;
   }
 
