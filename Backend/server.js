@@ -5,11 +5,11 @@ const helmet = require("helmet");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const routes = require("./routes");
-const { requestLogger } = require("./utils/logger");
+const { requestLogger, logger } = require("./utils/logger");
 const errorHandler = require("./middleware/errorMiddleware");
 const ApiError = require("./utils/apiError");
 
-dotenv.config({ path: path.join(__dirname, ".env") });
+dotenv.config();
 const app = express();
 
 app.use(helmet());
@@ -43,10 +43,15 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
-connectDB(process.env.MONGO_URI).then(() => {
-  app.listen(PORT, () => {
-    console.log(
-      `Server running in ${process.env.NODE_ENV || "development"} mode on port ${PORT}`,
-    );
+connectDB(process.env.MONGO_URI)
+  .then(() => {
+    app.listen(PORT, () => {
+      logger.info(
+        `Server running in ${process.env.NODE_ENV || "development"} mode on port ${PORT}`,
+      );
+    });
+  })
+  .catch((error) => {
+    logger.error("Failed to start server:", error);
+    process.exit(1);
   });
-});
