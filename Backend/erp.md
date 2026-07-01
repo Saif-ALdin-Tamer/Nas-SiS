@@ -43,9 +43,9 @@ Backend/
 │   ├── authController.js
 │   ├── userController.js
 │   ├── studentController.js
-│   ├── financeController.js
-│   ├── attendanceController.js
-│   └── academicController.js
+│   ├── financeController.js **
+│   ├── attendanceController.js **
+│   └── academicController.js **
 ├── services/
 │   ├── authService.js
 │   ├── userService.js
@@ -57,8 +57,8 @@ Backend/
 │   ├── Class.js
 │   ├── Attendance.js
 │   ├── Fee.js
-│   ├── Exam.js
-│   └── Notice.js
+│   ├── Exam.js 
+│   └── Notice.js 
 ├── middleware/
 │   ├── authMiddleware.js
 │   ├── roleMiddleware.js
@@ -68,8 +68,8 @@ Backend/
 ├── utils/
 │   ├── apiResponse.js
 │   ├── logger.js
-│   ├── constants.js
-│   └── validators.js
+│   ├── constants.js **
+│   └── validators.js **
 └── tests/
     ├── unit/
     └── integration/
