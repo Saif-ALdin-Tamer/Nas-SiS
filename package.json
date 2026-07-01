@@ -1,0 +1,21 @@
+{
+  "name": "nas-sis",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Saif-ALdin-Tamer/Nas-SiS#readme",
+  "bugs": {
+    "url": "https://github.com/Saif-ALdin-Tamer/Nas-SiS/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saif-ALdin-Tamer/Nas-SiS.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "front": "npm run dev --prefix frontend",
+    "back": "npm run dev --prefix backend"
+  }
+}
